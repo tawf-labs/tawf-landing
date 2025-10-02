@@ -38,10 +38,10 @@ export function DappsSection() {
             <Card key={app.name} className="border-border/60 bg-black/30 backdrop-blur">
               <CardHeader>
                 <CardTitle className="text-xl">{app.title}</CardTitle>
-                <CardDescription className="text-foreground/70">{app.name}</CardDescription>
+                <CardDescription className="text-foreground/80">{app.name}</CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
-                <p className="text-sm text-foreground/70 leading-relaxed">{app.desc}</p>
+                <p className="text-sm text-foreground/80 leading-relaxed text-soft-glow">{app.desc}</p>
                 <div>
                   <Link
                     href={app.href}

@@ -8,12 +8,12 @@ export function GovernanceSection() {
           Sharia Governance with ZK
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
-          <p className="md:col-span-2 font-mono text-foreground/70 leading-relaxed">
+          <p className="md:col-span-2 font-mono text-foreground/80 leading-relaxed text-soft-glow">
             We design governance primitives that preserve individual privacy while guaranteeing collective integrity.
             With zero-knowledge attestations, participants can prove eligibility, compliance, and voting rights without
             revealing sensitive data—delivering transparent and Sharia-aligned decision-making.
           </p>
-          <ul className="list-disc pl-5 text-sm text-foreground/70 space-y-2">
+          <ul className="list-disc pl-5 text-sm text-foreground/80 space-y-2 text-soft-glow">
             <li>Privacy-preserving eligibility proofs</li>
             <li>Transparent tallying and audit trails</li>
             <li>Community-first, halal-by-design</li>

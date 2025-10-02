@@ -14,11 +14,11 @@ export function Hero() {
 
       <div className="pb-16 mt-auto text-center relative">
         <Pill className="mb-6">TAWF LABS</Pill>
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient text-balance leading-tight bg-gradient-to-r from-white to-[#ffe38a] bg-clip-text text-transparent">
           Bridging the Ummah <br />
           <i className="font-light">to Web3</i>
         </h1>
-        <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[560px] mx-auto">
+        <p className="font-mono text-sm sm:text-base text-foreground/80 text-balance leading-relaxed mt-8 max-w-[640px] mx-auto text-soft-glow">
           We build halal-first zk dapps: blockchain-based zakat at zkt.app, Tawf Sharia governance using zero-knowledge
           proofs, and blockchain-based qurbani at qrbn.app.
         </p>

@@ -9,13 +9,15 @@ import { ContactSection } from "@/components/sections/contact"
 
 export default function Home() {
   return (
-    <>
+    <main className="relative">
       <Hero />
-      <AboutSection />
-      <DappsSection />
-      <GovernanceSection />
-      <ContactSection />
+      <div className="relative z-10 bg-background">
+        <AboutSection />
+        <DappsSection />
+        <GovernanceSection />
+        <ContactSection />
+      </div>
       <Leva hidden />
-    </>
+    </main>
   )
 }

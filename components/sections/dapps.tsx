@@ -27,21 +27,22 @@ export function DappsSection() {
   ]
 
   return (
-    <section id="dapps" className="relative py-20 md:py-28">
-      <div className="container">
-        <h2 className="font-sentient text-3xl md:text-5xl mb-10 bg-gradient-to-r from-[#FFC700] to-[#ffe38a] bg-clip-text text-transparent">
-          Dapps
-        </h2>
+    <section id="dapps" className="relative py-16 sm:py-20 md:py-28">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl mb-8 sm:mb-10 bg-gradient-to-r from-[#FFC700] to-[#ffe38a] bg-clip-text text-transparent">
+            Dapps
+          </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {apps.map((app) => (
             <Card key={app.name} className="border-border/60 bg-black/30 backdrop-blur">
               <CardHeader>
-                <CardTitle className="text-xl">{app.title}</CardTitle>
-                <CardDescription className="text-foreground/80">{app.name}</CardDescription>
+                <CardTitle className="font-display text-xl">{app.title}</CardTitle>
+                <CardDescription className="font-mono text-foreground/80">{app.name}</CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col gap-4">
-                <p className="text-sm text-foreground/80 leading-relaxed text-soft-glow">{app.desc}</p>
+                <p className="font-sans text-sm text-foreground/80 leading-relaxed text-soft-glow">{app.desc}</p>
                 <div>
                   <Link
                     href={app.href}
@@ -54,6 +55,7 @@ export function DappsSection() {
               </CardContent>
             </Card>
           ))}
+          </div>
         </div>
       </div>
     </section>

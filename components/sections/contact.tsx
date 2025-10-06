@@ -12,7 +12,7 @@ export function ContactSection() {
             <p className="font-sans text-base sm:text-lg text-foreground/80 mb-6 sm:mb-8 max-w-2xl text-soft-glow leading-relaxed">
               Looking to launch a Sharia-first zk application or partner on governance design? Let's connect.
             </p>
-            <a href="mailto:team@tawflabs.com">
+            <a href="mailto:mzidanfatonie@tawf.xyz">
               <Button>[Email Us]</Button>
             </a>
           </div>

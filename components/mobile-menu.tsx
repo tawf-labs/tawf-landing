@@ -61,7 +61,7 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
               </Link>
             ))}
 
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <Link
                 href="/#contact"
                 onClick={handleLinkClick}
@@ -69,7 +69,7 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
               >
                 Contact
               </Link>
-            </div>
+            </div> */}
           </nav>
         </Dialog.Content>
       </Dialog.Portal>

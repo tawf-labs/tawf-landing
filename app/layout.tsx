@@ -20,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Tawf Labs",
+  title: "Tawf",
   description: "Bridging the Ummah to Web3 with Sharia-first zk dapps",
   generator: "v0.app",
 }

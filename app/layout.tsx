@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`} suppressHydrationWarning>
-        <Header />
+        {/* <Header /> */}
         {children}
       </body>
     </html>

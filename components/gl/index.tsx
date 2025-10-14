@@ -52,6 +52,10 @@ export const GL = ({ hovering }: { hovering: boolean }) => {
           near: 0.01,
           far: 300,
         }}
+        gl={{ antialias: true, alpha: false }}
+        onCreated={({ gl }) => {
+          gl.setClearColor(0x000000, 1);
+        }}
       >
         {/* <Perf position="top-left" /> */}
         <color attach="background" args={["#000"]} />

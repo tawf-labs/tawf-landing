@@ -4,16 +4,15 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone()
   
-  // Check for subdomain
-  const hostname = request.headers.get('host') || 'tawf.xyz'
-  const subdomain = hostname.split('.')[0]
+  // Check host header (strip port if present) and detect portal subdomain
+  const hostHeader = request.headers.get('host') || 'tawf.xyz'
+  const hostname = hostHeader.split(':')[0].toLowerCase()
 
-  // If accessing portal subdomain, rewrite to portal page
-  // Handle both production and localhost portal subdomain
-  if (
-    (subdomain === 'portal' && (hostname.endsWith('.localhost') || hostname.endsWith('.tawf.xyz')))
-    || hostname === 'portal.localhost'
-  ) {
+  // Match portal as a subdomain (handles portal.tawf.xyz, www.portal.tawf.xyz,
+  // portal.localhost, or any *.portal.localhost)
+  const isPortalHost = /(^|\.)portal\.(localhost|tawf\.xyz)$/.test(hostname)
+
+  if (isPortalHost) {
     url.pathname = `/portal${url.pathname}`
     return NextResponse.rewrite(url)
   }

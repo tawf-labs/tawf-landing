@@ -20,7 +20,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Tawf Labs",
+  title: "Tawf",
   description: "Bridging the Ummah to Web3 with Sharia-first zk dapps",
   generator: "v0.app",
 }
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`} suppressHydrationWarning>
-        <Header />
+        {/* <Header /> */}
         {children}
       </body>
     </html>

@@ -25,7 +25,7 @@ export default function DashboardPage() {
       <Tabs defaultValue="overview" className="space-y-4">
         <TabsList className="grid w-full grid-cols-4 bg-background/50 backdrop-blur-sm">
           <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="dex">DEX</TabsTrigger>
+          <TabsTrigger value="ecosystem">Ecosystem</TabsTrigger>
           <TabsTrigger value="governance">Governance</TabsTrigger>
           <TabsTrigger value="staking">Staking</TabsTrigger>
         </TabsList>
@@ -175,7 +175,7 @@ export default function DashboardPage() {
           </div>
         </TabsContent>
 
-        <TabsContent value="dex" className="space-y-4">
+        <TabsContent value="ecosystem" className="space-y-4">
           <Card className="bg-background/50 backdrop-blur-sm">
             <CardHeader>
               <CardTitle>Swap Tokens</CardTitle>

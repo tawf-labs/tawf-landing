@@ -8,34 +8,27 @@ import { Earth } from "lucide-react";
 
 const partners = [
   {
-    name: "HAQQ Network",
-    logo: "https://placehold.co/400x200/1a1a1a/FFC700/png?text=HAQQ",
-    url: "https://haqq.network",
+    name: "Lisk",
+    logo: "/logos/lisk.png",
+    url: "https://lisk.com",
+  },
+   {
+    name: "Base",
+    logo: "/logos/base.png",
+    url: "https://base.org",
+    invert: true,
   },
   {
     name: "Ethereum",
-    logo: "https://placehold.co/400x200/1a1a1a/8A92B2/png?text=ETH",
+    logo: "/logos/ethereum.png",
     url: "https://ethereum.org",
+    invert: true,
   },
-  {
-    name: "Polygon",
-    logo: "https://placehold.co/400x200/1a1a1a/8247E5/png?text=MATIC",
-    url: "https://polygon.technology",
-  },
-  {
-    name: "zkSync",
-    logo: "https://placehold.co/400x200/1a1a1a/4E529A/png?text=zkSync",
-    url: "https://zksync.io",
-  },
-  {
-    name: "Starknet",
-    logo: "https://placehold.co/400x200/1a1a1a/FF4C3B/png?text=STARK",
-    url: "https://starknet.io",
-  },
-  {
-    name: "Arbitrum",
-    logo: "https://placehold.co/400x200/1a1a1a/2D374B/png?text=ARB",
-    url: "https://arbitrum.io",
+   {
+    name: "Blockdev",
+    logo: "/logos/blockdev.png",
+    url: "https://blockdev.id/",
+    invert: true,
   },
 ];
 
@@ -116,8 +109,7 @@ export function EcosystemSection() {
 
           <div className="inline-block bg-background/20 backdrop-blur-sm px-4 py-2 rounded-lg">
             <p className="mx-auto max-w-3xl font-sans text-foreground/80 text-soft-glow text-base sm:text-lg leading-relaxed">
-              Tawf is built on a foundation of leading blockchain networks, with
-              HAQQ Network as our primary chain.
+              Tawf leverages a robust multi-chain foundation, integrating leading EVM and non-EVM blockchain networks.
             </p>
           </div>
         </div>
@@ -157,6 +149,7 @@ export function EcosystemSection() {
                       alt={partner.name}
                       fill
                       className="p-1 object-center object-contain"
+                      style={partner.invert ? { filter: "brightness(0) invert(1)" } : undefined}
                       sizes="(max-width: 640px) 80px, 100px"
                     />
                   </div>

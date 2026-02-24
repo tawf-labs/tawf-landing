@@ -16,19 +16,19 @@ export function DappsSection() {
     {
       name: "zkt.app",
       title: "Wealth Circulation",
-      desc: "Transparent zakat for distributive justice, calculate, verify, and distribute with auditability and privacy via ZK proofs.",
+      desc: "Transparent zakat for fair distribution to those in need, calculate, verify, and distribute with auditability and privacy via privacy-preserving proofs.",
       href: "https://zkt.app",
     },
     {
       name: "TAWF Stewardship Layer",
       title: "Ethical Governance",
-      desc: "Values-aligned oversight mechanisms, validating community governance outcomes for Sharia alignment using zero-knowledge attestations.",
+      desc: "A governance layer that ensures community decisions follow Islamic principles, with privacy protection for reviewers using zero-knowledge attestations.",
       href: "#governance",
     },
     {
       name: "qrbn.app",
       title: "Real-Economy Tethering",
-      desc: "Physical asset verification on-chain, end-to-end qurbani procurement and proof-of-fulfillment using blockchain.",
+      desc: "Physical asset verification recorded on the blockchain, end-to-end qurbani procurement and verifiable proof of completion.",
       href: "https://qrbn.app",
     },
   ];
@@ -45,7 +45,7 @@ export function DappsSection() {
           </div>
 
           <p className="text-foreground/70 text-base sm:text-lg mb-8 max-w-3xl">
-            Each application demonstrates how economic principles translate into working decentralized systems.
+            Each application demonstrates how economic principles translate into working distributed systems.
           </p>
 
           <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">

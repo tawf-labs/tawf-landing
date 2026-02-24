@@ -62,13 +62,13 @@ export function GovernanceSection() {
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center gap-3 mb-12">
             <h2 className="bg-clip-text bg-gradient-to-r from-[#FFC700] to-[#ffe38a] font-display text-transparent text-3xl sm:text-4xl md:text-5xl">
-              Governance Structured Around Islamic Jurisprudence
+              Governance Guided by Islamic Principles
             </h2>
             <Layers className="w-12 h-12 text-foreground/80 icon-float" />
           </div>
 
           <p className="text-foreground/70 text-lg mb-12 max-w-4xl">
-            TAWF operates a dual-layer governance system structured around Islamic jurisprudence, balancing open community participation (shura) with values-aligned oversight (hisbah) through transparent governance and zero-knowledge validation.
+            TAWF operates a two-part governance system guided by Islamic legal principles, balancing open community participation (shura - Islamic consultative decision-making) with values-aligned oversight (hisbah - Islamic accountability oversight) through transparent governance and zero-knowledge validation.
           </p>
 
           {/* Bento Box Layout */}
@@ -79,19 +79,19 @@ export function GovernanceSection() {
                 <Crystal3D />
                 <div className="flex-1 pt-1">
                   <h3 className="text-2xl font-semibold text-foreground mb-2">Community DAO</h3>
-                  <p className="text-sm text-foreground/60">Transparent & Decentralized</p>
+                  <p className="text-sm text-foreground/60">Transparent & Community-Governed</p>
                 </div>
               </div>
 
               <ul className="space-y-4 list-minimal list-minimal-emerald">
-                <li>Fully transparent on-chain governance with open proposal viewing</li>
-                <li>Open DID-based voting using TAWF DID credentials for all community members</li>
-                <li>Community-driven decision making for ecosystem upgrades and treasury management</li>
+                <li>Fully transparent governance recorded on the blockchain with open proposal viewing</li>
+                <li>Open secure credential-based voting using TAWF DID credentials for all community members</li>
+                <li>Community-driven decision making for ecosystem upgrades and community fund management</li>
               </ul>
 
               <div className="mt-6 pt-6 border-t border-white/10">
                 <p className="text-xs text-foreground/50">
-                  Empowering the community with transparent governance grounded by the Islamic tradition of consultative decision-making (shura)
+                  Empowering the community with transparent governance grounded in the Islamic tradition of shura (consultative decision-making)
                 </p>
               </div>
             </div>
@@ -107,14 +107,14 @@ export function GovernanceSection() {
               </div>
 
               <ul className="space-y-4 list-minimal list-minimal-gold">
-                <li>Zero-knowledge proofs ensure privacy while maintaining verifiability</li>
-                <li>Qualified Islamic scholars with TAWF DID credentials provide jurisprudential review of proposals and outcomes</li>
+                <li>Zero-knowledge technology keeps reviewers private while maintaining transparency and verifiability</li>
+                <li>Qualified Islamic scholars with TAWF DID credentials provide religious and ethical review of proposals and outcomes</li>
                 <li>Veto power on non-compliant decisions while protecting scholar identities</li>
               </ul>
 
               <div className="mt-6 pt-6 border-t border-white/10">
                 <p className="text-xs text-foreground/50">
-                  Ensuring Sharia compliance validation through institutional oversight grounded by the Islamic tradition of accountability (hisbah)
+                  Ensuring alignment with Islamic principles through institutional oversight grounded in the Islamic tradition of hisbah (accountability)
                 </p>
               </div>
             </div>
@@ -123,7 +123,7 @@ export function GovernanceSection() {
           {/* Bottom Summary */}
           <div className="mt-8 p-6 rounded-xl bg-white/5 border border-white/10">
             <p className="text-center text-sm text-foreground/70">
-              <span className="font-semibold text-foreground">DID-Based Governance:</span> Both the Community DAO and Independent Sharia Council use TAWF DID (NFT credentials) for voting rights, no tokens required. This dual-layer system ensures decisions remain community-driven while applications, upgrades, and standards can be verifiably Sharia-aligned.
+              <span className="font-semibold text-foreground">DID-Based Governance:</span> Both the Community DAO and Independent Sharia Council use TAWF DID (NFT credentials) for voting rights, no tokens required. This two-part system ensures decisions remain community-driven while applications, upgrades, and standards can be verifiably aligned with Islamic principles.
             </p>
           </div>
 

@@ -24,6 +24,7 @@ export const Footer = () => {
     { label: "Help Center", href: "/help" },
     { label: "Community", href: "/community" },
     { label: "Partners", href: "/partners" },
+    { label: "Contact", href: "mailto:mzidanfatonie@tawf.xyz" },
   ]
 
   const legalLinks = [

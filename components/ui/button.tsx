@@ -17,7 +17,7 @@ const buttonVariants = cva(
         warning:
           "rounded-full tracking-wide bg-amber-600 hover:bg-amber-700 text-white border border-amber-500 shadow-[0_4px_14px_rgba(217,119,6,0.25)] hover:shadow-[0_6px_20px_rgba(217,119,6,0.35)] hover:scale-[1.03] hover:-translate-y-0.5 focus-visible:ring-amber-500 after:content-[''] after:absolute after:-z-10 after:left-6 after:right-6 after:-bottom-2 after:h-6 after:rounded-full after:bg-[radial-gradient(ellipse_at_center,rgba(217,119,6,0.4),rgba(0,0,0,0)_65%)] after:blur-xl after:opacity-60 hover:after:opacity-80",
         outline:
-          "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring",
+          "rounded-full tracking-wide border border-white/20 bg-white/5 text-white/90 hover:bg-white/10 hover:text-white shadow-[0_4px_14px_rgba(0,0,0,0.15)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.25)] hover:scale-[1.03] hover:-translate-y-0.5 focus-visible:ring-white/50 after:content-[''] after:absolute after:-z-10 after:left-6 after:right-6 after:-bottom-2 after:h-6 after:rounded-full after:bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.1),rgba(0,0,0,0)_65%)] after:blur-xl after:opacity-40 hover:after:opacity-60",
         ghost:
           "hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring",
         link:

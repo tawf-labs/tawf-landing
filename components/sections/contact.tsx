@@ -11,7 +11,7 @@ export function ContactSection() {
           <div className="rounded-lg border border-border/60 bg-black/30 p-6 sm:p-8 md:p-10 backdrop-blur">
             <h3 className="font-display text-2xl sm:text-3xl md:text-4xl mb-3 sm:mb-4">Start Building & Integrate TAWF into Your App</h3>
             <p className="font-sans text-base sm:text-lg text-foreground/80 mb-6 sm:mb-8 max-w-2xl text-soft-glow leading-relaxed">
-              Ready to integrate Sharia-aligned infrastructure into your application? Explore our SDK documentation to get started.
+              Ready to build your ethical, value-driven application? Explore our SDK documentation to get started.
             </p>
             <Link
               href="/docs"

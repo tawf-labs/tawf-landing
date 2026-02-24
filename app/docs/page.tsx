@@ -3,8 +3,11 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { Github, Code2, BookOpen, Zap, Wrench, FileText, Users, MessageCircle } from "lucide-react"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
+import { Github, Code2, BookOpen, Zap, Wrench, FileText, Users, MessageCircle, Copy, Check, Package, Shield, Building2, Globe, Landmark, TrendingUp, ArrowRight, CheckCircle2, AlertTriangle } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 
 interface DocSection {
   title: string
@@ -14,29 +17,104 @@ interface DocSection {
   href?: string
 }
 
-interface SDKFeature {
+interface SCSStandard {
+  number: string
+  name: string
+  description: string
+  features: string[]
+  layer: "capital" | "infrastructure" | "governance"
+}
+
+interface UseCase {
   title: string
   description: string
+  icon: React.ElementType
+}
+
+const CodeBlock = ({ code, language = "bash" }: { code: string; language?: string }) => {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(code)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  return (
+    <div className="relative group">
+      <pre className="bg-black/40 border border-white/10 rounded-lg p-4 overflow-x-auto">
+        <code className="text-sm text-foreground/90 font-mono">{code}</code>
+      </pre>
+      <button
+        onClick={handleCopy}
+        className="absolute top-3 right-3 p-2 rounded-md bg-white/5 hover:bg-white/10 border border-white/10 transition-colors opacity-0 group-hover:opacity-100"
+      >
+        {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4 text-foreground/60" />}
+      </button>
+    </div>
+  )
 }
 
 export default function DocsPage() {
-  const sdkFeatures: SDKFeature[] = [
+  const scsStandards: SCSStandard[] = [
     {
-      title: "Sharia-Aligned Transactions",
-      description: "SDK methods for zakat, waqf, and qurban transactions with built-in Sharia alignment validation.",
+      number: "SCS-1",
+      name: "Mudarabah",
+      description: "Manager-investor profit-sharing partnership where capital provider (Rabb al-Mal) provides capital and manager (Mudarib) manages investments.",
+      features: ["Profit sharing by pre-agreed ratio", "Loss borne by capital provider", "Manager liability for misconduct", "ERC-20 compatible"],
+      layer: "capital"
     },
     {
-      title: "Zero-Knowledge Proofs",
-      description: "Privacy-preserving identity and verification using zk-SNARKs technology.",
+      number: "SCS-2",
+      name: "Musharakah",
+      description: "Joint venture capital model where all partners contribute capital and share profits and losses.",
+      features: ["Flexible profit ratios", "Loss ratio equals capital ratio", "Multi-partner support", "AAOIFI Standard #12 compliant"],
+      layer: "capital"
     },
     {
-      title: "Smart Contract Integration",
-      description: "Seamless integration with TAWF's smart contracts for Islamic finance operations.",
+      number: "SCS-3",
+      name: "Vault Engine",
+      description: "ERC-4626 compliant vault with epoch-based accounting and NAV calculation for profit-sharing pools.",
+      features: ["Epoch-based accounting", "NAV calculation", "Strategy management", "ERC-4626 standard"],
+      layer: "infrastructure"
     },
     {
-      title: "Wallet Connection",
-      description: "Multi-wallet support with Sharia-aware transaction filtering and guidance.",
+      number: "SCS-4",
+      name: "Enforcement Layer",
+      description: "Protocol-level enforcement ensuring Sharia compliance by prohibiting guaranteed returns and fixed-yield structures.",
+      features: ["No guaranteed returns", "Profit-sharing validation", "Fixed-yield prevention", "Compliance checks"],
+      layer: "infrastructure"
     },
+    {
+      number: "SCS-5",
+      name: "AAOIFI Governance",
+      description: "Governance framework implementing AAOIFI Governance Standard #3 with Sharia Supervisory Board oversight.",
+      features: ["SSB oversight", "Multi-signature approval", "Prohibited asset screening", "Financial ratio validation"],
+      layer: "governance"
+    }
+  ]
+
+  const useCases: UseCase[] = [
+    {
+      title: "Islamic Fintech Startups",
+      description: "Build Sharia-compliant DeFi products with production-ready primitives for halal capital formation.",
+      icon: TrendingUp
+    },
+    {
+      title: "Web3 Protocols (MENA/SEA)",
+      description: "Integrate Islamic finance capabilities to serve Muslim-majority markets with compliant infrastructure.",
+      icon: Globe
+    },
+    {
+      title: "DAOs Structuring Halal Capital",
+      description: "Implement transparent, on-chain governance with Sharia Supervisory Board oversight mechanisms.",
+      icon: Users
+    },
+    {
+      title: "Institutional Sharia-Compliant Funds",
+      description: "Deploy auditable, AAOIFI-compliant investment vehicles with built-in compliance enforcement.",
+      icon: Landmark
+    }
   ]
 
   const docSections: DocSection[] = [
@@ -69,9 +147,16 @@ export default function DocsPage() {
   const communityLinks = [
     {
       title: "GitHub Repository",
-      description: "Explore our open-source codebase, contribute to development, and report issues.",
+      description: "Explore the Sharia Capital Standard codebase, contribute to development, and report issues.",
       icon: Github,
-      href: "https://github.com/tawf-labs",
+      href: "https://github.com/tawf-labs/Sharia-Capital-Standard",
+      color: "text-white hover:text-[#FFC700]",
+    },
+    {
+      title: "npm Package",
+      description: "Install the SDK via npm and integrate Sharia-compliant primitives into your project.",
+      icon: Package,
+      href: "https://www.npmjs.com/package/@tawf-labs/sharia-capital-standard",
       color: "text-white hover:text-[#FFC700]",
     },
     {
@@ -79,13 +164,6 @@ export default function DocsPage() {
       description: "Connect with our team and community of developers building the future of Islamic Web3.",
       icon: Users,
       href: "https://discord.gg/s7K59wE4qc",
-      color: "text-white hover:text-[#FFC700]",
-    },
-    {
-      title: "Provide Feedback",
-      description: "Share your thoughts, report bugs, and request features to help improve TAWF.",
-      icon: MessageCircle,
-      href: "/#feedback",
       color: "text-white hover:text-[#FFC700]",
     },
   ]
@@ -112,56 +190,632 @@ export default function DocsPage() {
               </div>
 
               {/* SDK Status Hero Card */}
-              <Card className="border-border/60 bg-gradient-to-br from-[#FFC700]/10 to-[#ebb800]/5 backdrop-blur mb-12">
+              <Card className="border-border/60 bg-gradient-to-br from-emerald-500/10 to-emerald-600/5 backdrop-blur mb-12">
                 <CardHeader>
-                  <div className="flex items-start justify-between">
+                  <div className="flex items-start justify-between flex-wrap gap-4">
                     <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#FFC700] to-[#ebb800] flex items-center justify-center">
-                        <Code2 className="w-8 h-8 text-black" />
+                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center">
+                        <Code2 className="w-8 h-8 text-white" />
                       </div>
                       <div>
                         <CardTitle className="font-display text-2xl sm:text-3xl text-foreground">
-                          TAWF-SDK
+                          Sharia Capital Standard
                         </CardTitle>
-                        <div className="flex items-center gap-2 mt-1">
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                            <Zap className="w-3 h-3 mr-1" />
-                            In Development
-                          </span>
-                          <span className="text-sm text-foreground/60">Coming Soon</span>
+                        <div className="flex items-center gap-2 mt-2 flex-wrap">
+                          <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 hover:bg-emerald-500/30">
+                            <CheckCircle2 className="w-3 h-3 mr-1" />
+                            Available
+                          </Badge>
+                          <Badge variant="outline" className="text-foreground/70">
+                            v0.1.2 (Latest)
+                          </Badge>
+                          <Badge variant="outline" className="text-foreground/70">
+                            MIT License
+                          </Badge>
                         </div>
                       </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <Link
+                        href="https://github.com/tawf-labs/Sharia-Capital-Standard"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-colors text-sm"
+                      >
+                        <Github className="w-4 h-4" />
+                        GitHub
+                      </Link>
+                      <Link
+                        href="https://www.npmjs.com/package/@tawf-labs/sharia-capital-standard"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg transition-colors text-sm"
+                      >
+                        <Package className="w-4 h-4" />
+                        npm
+                      </Link>
                     </div>
                   </div>
                 </CardHeader>
 
                 <CardContent className="flex flex-col gap-6">
-                  <p className="font-sans text-base text-foreground/80 leading-relaxed">
-                    We're building a comprehensive SDK for developers to integrate values-aligned features into their applications. The TAWF-SDK will provide tools, libraries, and documentation to build Islamic finance dApps with confidence.
-                  </p>
+                  {/* Why SCS? */}
+                  <div className="p-4 rounded-lg bg-black/30 border border-white/5">
+                    <h3 className="font-display text-lg font-semibold text-foreground mb-2 flex items-center gap-2">
+                      <Zap className="w-5 h-5 text-[#FFC700]" />
+                      Why Sharia Capital Standard?
+                    </h3>
+                    <p className="font-sans text-sm text-foreground/80 leading-relaxed">
+                      Most DeFi primitives assume interest-based yield or implicit guarantees. Sharia Capital Standard provides composable smart contract primitives aligned with AAOIFI standards, enabling halal capital formation natively on-chain.
+                    </p>
+                  </div>
 
-                  {/* SDK Features List */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                    {sdkFeatures.map((feature) => (
-                      <div key={feature.title} className="flex items-start gap-3 p-4 rounded-lg bg-black/30 border border-white/5">
-                        <div className="w-8 h-8 rounded-lg bg-[#FFC700]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <Zap className="w-4 h-4 text-[#FFC700]" />
-                        </div>
-                        <div>
-                          <h4 className="font-display text-sm font-semibold text-foreground mb-1">
-                            {feature.title}
-                          </h4>
-                          <p className="font-sans text-xs text-foreground/60">
-                            {feature.description}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
+                  {/* Supported Environments */}
+                  <div>
+                    <h4 className="font-display text-sm font-semibold text-foreground/70 mb-3">Supported Environments</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {["EVM", "Solidity", "Foundry", "Hardhat", "Solana", "Anchor"].map((env) => (
+                        <Badge key={env} variant="outline" className="text-foreground/80">
+                          {env}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Documentation Sections Grid */}
+              {/* Layered Architecture - SCS Standards */}
+              <div className="mb-12">
+                <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-8">
+                  Standards Architecture
+                </h2>
+
+                {/* Capital Primitives Layer */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#FFC700]/30 to-transparent" />
+                    <h3 className="font-display text-lg text-[#FFC700] uppercase tracking-wider">Capital Primitives</h3>
+                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#FFC700]/30 to-transparent" />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {scsStandards.filter(s => s.layer === "capital").map((standard) => (
+                      <Card key={standard.number} className="border-border/60 bg-black/30 backdrop-blur hover:bg-black/40 transition-colors">
+                        <CardHeader>
+                          <div className="flex items-start justify-between mb-2">
+                            <Badge className="bg-[#FFC700]/20 text-[#FFC700] border-[#FFC700]/30">
+                              {standard.number}
+                            </Badge>
+                          </div>
+                          <CardTitle className="font-display text-xl text-foreground">
+                            {standard.name}
+                          </CardTitle>
+                          <CardDescription className="font-sans text-sm text-foreground/70 leading-relaxed">
+                            {standard.description}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <ul className="space-y-2">
+                            {standard.features.map((feature, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-sm text-foreground/60">
+                                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Infrastructure Layer */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent" />
+                    <h3 className="font-display text-lg text-blue-400 uppercase tracking-wider">Infrastructure Layer</h3>
+                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent" />
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {scsStandards.filter(s => s.layer === "infrastructure").map((standard) => (
+                      <Card key={standard.number} className="border-border/60 bg-black/30 backdrop-blur hover:bg-black/40 transition-colors">
+                        <CardHeader>
+                          <div className="flex items-start justify-between mb-2">
+                            <Badge className="bg-blue-400/20 text-blue-400 border-blue-400/30">
+                              {standard.number}
+                            </Badge>
+                          </div>
+                          <CardTitle className="font-display text-xl text-foreground">
+                            {standard.name}
+                          </CardTitle>
+                          <CardDescription className="font-sans text-sm text-foreground/70 leading-relaxed">
+                            {standard.description}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <ul className="space-y-2">
+                            {standard.features.map((feature, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-sm text-foreground/60">
+                                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Governance Layer */}
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent" />
+                    <h3 className="font-display text-lg text-purple-400 uppercase tracking-wider">Governance Layer</h3>
+                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent" />
+                  </div>
+                  <div className="grid grid-cols-1 gap-6">
+                    {scsStandards.filter(s => s.layer === "governance").map((standard) => (
+                      <Card key={standard.number} className="border-border/60 bg-black/30 backdrop-blur hover:bg-black/40 transition-colors">
+                        <CardHeader>
+                          <div className="flex items-start justify-between mb-2">
+                            <Badge className="bg-purple-400/20 text-purple-400 border-purple-400/30">
+                              {standard.number}
+                            </Badge>
+                          </div>
+                          <CardTitle className="font-display text-xl text-foreground">
+                            {standard.name}
+                          </CardTitle>
+                          <CardDescription className="font-sans text-sm text-foreground/70 leading-relaxed">
+                            {standard.description}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <ul className="space-y-2">
+                            {standard.features.map((feature, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-sm text-foreground/60">
+                                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Architecture Diagram */}
+              <div className="mb-12">
+                <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-6">
+                  Architecture Overview
+                </h2>
+                <Card className="border-border/60 bg-black/30 backdrop-blur overflow-hidden">
+                  <CardContent className="p-8">
+                    <div className="flex flex-col gap-6">
+                      {/* Flow Diagram */}
+                      <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center">
+                        <div className="flex-1">
+                          <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[#FFC700] to-[#ebb800] flex items-center justify-center mb-3">
+                            <Users className="w-10 h-10 text-black" />
+                          </div>
+                          <p className="font-display text-sm text-foreground">Users</p>
+                        </div>
+                        <ArrowRight className="w-6 h-6 text-foreground/40 rotate-90 md:rotate-0" />
+                        <div className="flex-1">
+                          <div className="w-20 h-20 mx-auto rounded-full bg-blue-500/20 border-2 border-blue-400 flex items-center justify-center mb-3">
+                            <Code2 className="w-10 h-10 text-blue-400" />
+                          </div>
+                          <p className="font-display text-sm text-foreground">Vault Engine</p>
+                          <p className="text-xs text-foreground/50">(SCS-3)</p>
+                        </div>
+                        <ArrowRight className="w-6 h-6 text-foreground/40 rotate-90 md:rotate-0" />
+                        <div className="flex-1">
+                          <div className="w-20 h-20 mx-auto rounded-full bg-[#FFC700]/20 border-2 border-[#FFC700] flex items-center justify-center mb-3">
+                            <TrendingUp className="w-10 h-10 text-[#FFC700]" />
+                          </div>
+                          <p className="font-display text-sm text-foreground">Capital Modules</p>
+                          <p className="text-xs text-foreground/50">(SCS-1, SCS-2)</p>
+                        </div>
+                        <ArrowRight className="w-6 h-6 text-foreground/40 rotate-90 md:rotate-0" />
+                        <div className="flex-1">
+                          <div className="w-20 h-20 mx-auto rounded-full bg-blue-500/20 border-2 border-blue-400 flex items-center justify-center mb-3">
+                            <Shield className="w-10 h-10 text-blue-400" />
+                          </div>
+                          <p className="font-display text-sm text-foreground">Enforcement</p>
+                          <p className="text-xs text-foreground/50">(SCS-4)</p>
+                        </div>
+                        <ArrowRight className="w-6 h-6 text-foreground/40 rotate-90 md:rotate-0" />
+                        <div className="flex-1">
+                          <div className="w-20 h-20 mx-auto rounded-full bg-purple-500/20 border-2 border-purple-400 flex items-center justify-center mb-3">
+                            <Landmark className="w-10 h-10 text-purple-400" />
+                          </div>
+                          <p className="font-display text-sm text-foreground">SSB Governance</p>
+                          <p className="text-xs text-foreground/50">(SCS-5)</p>
+                        </div>
+                      </div>
+
+                      {/* AAOIFI Compliance Flow */}
+                      <div className="mt-6 p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
+                        <div className="flex items-center gap-2 mb-2">
+                          <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                          <h4 className="font-display text-sm font-semibold text-foreground">AAOIFI Compliance Validation</h4>
+                        </div>
+                        <p className="text-xs text-foreground/70 leading-relaxed">
+                          Every transaction flows through the enforcement layer (SCS-4) which validates against AAOIFI standards before execution. 
+                          The SSB Governance layer (SCS-5) provides ongoing oversight and can update compliance rules through multi-signature approval.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Installation Section */}
+              <div className="mb-12">
+                <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-6">
+                  Installation
+                </h2>
+                <Card className="border-border/60 bg-black/30 backdrop-blur">
+                  <CardContent className="p-6">
+                    <Tabs defaultValue="foundry" className="w-full">
+                      <TabsList className="grid w-full grid-cols-2 mb-6">
+                        <TabsTrigger value="foundry">Foundry</TabsTrigger>
+                        <TabsTrigger value="hardhat">Hardhat</TabsTrigger>
+                      </TabsList>
+                      
+                      <TabsContent value="foundry" className="space-y-4">
+                        <div>
+                          <h4 className="font-display text-sm font-semibold text-foreground mb-3">Install as Foundry dependency</h4>
+                          <CodeBlock code="forge install tawf-labs/Sharia-Capital-Standard" />
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-display text-sm font-semibold text-foreground mb-3">Add to remappings.txt</h4>
+                          <CodeBlock code="@sharia-capital/=lib/Sharia-Capital-Standard/evm/src/" />
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-display text-sm font-semibold text-foreground mb-3">Import in your contracts</h4>
+                          <CodeBlock 
+                            language="solidity"
+                            code={`import "@sharia-capital/SCS1/MudarabahPool.sol";
+import "@sharia-capital/SCS2/MusharakahPool.sol";
+import "@sharia-capital/SCS3/VaultEngine.sol";
+import "@sharia-capital/SCS4/SCSEnforcement.sol";
+import "@sharia-capital/SCS5/AAOIFIGovernance.sol";`}
+                          />
+                        </div>
+                      </TabsContent>
+                      
+                      <TabsContent value="hardhat" className="space-y-4">
+                        <div>
+                          <h4 className="font-display text-sm font-semibold text-foreground mb-3">Install via npm</h4>
+                          <CodeBlock code="npm install @tawf-labs/sharia-capital-standard" />
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-display text-sm font-semibold text-foreground mb-3">Import in your contracts</h4>
+                          <CodeBlock 
+                            language="solidity"
+                            code={`import "@tawf-labs/sharia-capital-standard/SCS1/MudarabahPool.sol";
+import "@tawf-labs/sharia-capital-standard/interfaces/ISCS1.sol";`}
+                          />
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-display text-sm font-semibold text-foreground mb-3">Access ABIs in JavaScript/TypeScript</h4>
+                          <CodeBlock 
+                            language="javascript"
+                            code={`const MudarabahPoolABI = require('@tawf-labs/sharia-capital-standard/evm/out/MudarabahPool.sol/MudarabahPool.json');`}
+                          />
+                        </div>
+                      </TabsContent>
+                    </Tabs>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Usage Examples */}
+              <div className="mb-12">
+                <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-6">
+                  Usage Examples
+                </h2>
+                <Tabs defaultValue="scs1" className="w-full">
+                  <TabsList className="grid w-full grid-cols-5 mb-6">
+                    <TabsTrigger value="scs1">SCS-1</TabsTrigger>
+                    <TabsTrigger value="scs2">SCS-2</TabsTrigger>
+                    <TabsTrigger value="scs3">SCS-3</TabsTrigger>
+                    <TabsTrigger value="scs4">SCS-4</TabsTrigger>
+                    <TabsTrigger value="scs5">SCS-5</TabsTrigger>
+                  </TabsList>
+                  
+                  <TabsContent value="scs1">
+                    <Card className="border-border/60 bg-black/30 backdrop-blur">
+                      <CardHeader>
+                        <CardTitle className="font-display text-xl">Mudarabah Pool</CardTitle>
+                        <CardDescription>Create a profit-sharing partnership pool</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <CodeBlock 
+                          language="solidity"
+                          code={`// Create Mudarabah pool
+MudarabahFactory factory = new MudarabahFactory(enforcementAddress);
+
+address pool = factory.createPool(
+    usdcAddress,
+    managerAddress,
+    capitalProviderAddress,
+    2000, // 20% manager share (basis points)
+    8000, // 80% provider share (basis points)
+    "USDC Mudarabah Pool",
+    "MDP-USDC"
+);
+
+// Deposit capital
+MudarabahPool mudarabah = MudarabahPool(pool);
+usdc.approve(pool, 1000e6);
+mudarabah.deposit(1000e6);
+
+// Deploy to strategy
+mudarabah.deployCapital(strategyAddress, 500e6);`}
+                        />
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  
+                  <TabsContent value="scs2">
+                    <Card className="border-border/60 bg-black/30 backdrop-blur">
+                      <CardHeader>
+                        <CardTitle className="font-display text-xl">Musharakah Partnership</CardTitle>
+                        <CardDescription>Set up a joint venture capital pool</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <CodeBlock 
+                          language="solidity"
+                          code={`// Create Musharakah pool
+MusharakahFactory factory = new MusharakahFactory(enforcementAddress);
+
+address[] memory partners = new address[](3);
+partners[0] = partner1;
+partners[1] = partner2;
+partners[2] = partner3;
+
+uint256[] memory capitalRatios = new uint256[](3);
+capitalRatios[0] = 5000; // 50%
+capitalRatios[1] = 3000; // 30%
+capitalRatios[2] = 2000; // 20%
+
+uint256[] memory profitRatios = new uint256[](3);
+profitRatios[0] = 4000; // 40%
+profitRatios[1] = 3500; // 35%
+profitRatios[2] = 2500; // 25%
+
+address pool = factory.createPool(
+    usdcAddress,
+    partners,
+    capitalRatios,
+    profitRatios,
+    "USDC Musharakah",
+    "MSH-USDC"
+);`}
+                        />
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  
+                  <TabsContent value="scs3">
+                    <Card className="border-border/60 bg-black/30 backdrop-blur">
+                      <CardHeader>
+                        <CardTitle className="font-display text-xl">Vault Engine</CardTitle>
+                        <CardDescription>Deploy an ERC-4626 compliant vault with epochs</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <CodeBlock 
+                          language="solidity"
+                          code={`// Deploy Vault Engine
+VaultEngine vault = new VaultEngine(
+    usdcAddress,
+    enforcementAddress,
+    "Halal Yield Vault",
+    "HYV"
+);
+
+// Set epoch duration (7 days)
+vault.setEpochDuration(7 days);
+
+// Add strategy
+vault.addStrategy(strategyAddress, 5000); // 50% allocation
+
+// Users deposit
+usdc.approve(address(vault), 1000e6);
+vault.deposit(1000e6, msg.sender);
+
+// End epoch and distribute profits
+vault.endEpoch();`}
+                        />
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  
+                  <TabsContent value="scs4">
+                    <Card className="border-border/60 bg-black/30 backdrop-blur">
+                      <CardHeader>
+                        <CardTitle className="font-display text-xl">Enforcement Layer</CardTitle>
+                        <CardDescription>Integrate compliance validation</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <CodeBlock 
+                          language="solidity"
+                          code={`// Deploy Enforcement Layer
+SCSEnforcement enforcement = new SCSEnforcement();
+
+// Validate profit-sharing ratios
+enforcement.validateProfitSharing(
+    managerShare,
+    providerShare
+); // Reverts if guaranteed returns detected
+
+// Check strategy compliance
+bool isCompliant = enforcement.isStrategyCompliant(
+    strategyAddress
+);
+
+// Your pool integrates enforcement
+contract MyPool {
+    SCSEnforcement public enforcement;
+    
+    function deployCapital(address strategy, uint256 amount) external {
+        require(
+            enforcement.isStrategyCompliant(strategy),
+            "Strategy not Sharia-compliant"
+        );
+        // Deploy capital...
+    }
+}`}
+                        />
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  
+                  <TabsContent value="scs5">
+                    <Card className="border-border/60 bg-black/30 backdrop-blur">
+                      <CardHeader>
+                        <CardTitle className="font-display text-xl">AAOIFI Governance</CardTitle>
+                        <CardDescription>Implement SSB oversight</CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <CodeBlock 
+                          language="solidity"
+                          code={`// Deploy AAOIFI Governance
+address[] memory ssbMembers = new address[](3);
+ssbMembers[0] = scholar1;
+ssbMembers[1] = scholar2;
+ssbMembers[2] = scholar3;
+
+AAOIFIGovernance governance = new AAOIFIGovernance(
+    ssbMembers,
+    2 // 2 of 3 multisig
+);
+
+// Add prohibited asset
+governance.proposeProhibitedAsset(assetAddress);
+governance.approveProposal(proposalId, scholar1);
+governance.approveProposal(proposalId, scholar2);
+governance.executeProposal(proposalId);
+
+// Validate investment
+bool isPermitted = governance.isAssetPermitted(assetAddress);`}
+                        />
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                </Tabs>
+              </div>
+
+              {/* AAOIFI Compliance & Security */}
+              <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* AAOIFI Compliance */}
+                <Card className="border-border/60 bg-black/30 backdrop-blur">
+                  <CardHeader>
+                    <CardTitle className="font-display text-xl flex items-center gap-2">
+                      <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+                      AAOIFI Compliance
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">Standard #8</Badge>
+                      <span className="text-sm text-foreground/70">Mudarabah</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">Standard #12</Badge>
+                      <span className="text-sm text-foreground/70">Musharakah</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">Standard #17</Badge>
+                      <span className="text-sm text-foreground/70">Investment Agencies</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Badge className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">Governance #3</Badge>
+                      <span className="text-sm text-foreground/70">Internal Sharia Review</span>
+                    </div>
+                    <div className="mt-4 p-3 rounded-lg bg-amber-500/10 border border-amber-500/30">
+                      <p className="text-xs text-amber-200/90 flex items-start gap-2">
+                        <AlertTriangle className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                        <span>No capital guarantee mechanisms exist at protocol level (in accordance with AAOIFI).</span>
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Security */}
+                <Card className="border-border/60 bg-black/30 backdrop-blur">
+                  <CardHeader>
+                    <CardTitle className="font-display text-xl flex items-center gap-2">
+                      <Shield className="w-6 h-6 text-blue-400" />
+                      Security Features
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="flex items-start gap-2 text-sm text-foreground/70">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span>100% test coverage</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm text-foreground/70">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span>Fuzz testing (256+ iterations)</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm text-foreground/70">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span>ReentrancyGuard protection</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm text-foreground/70">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span>Role-based access control</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-sm text-foreground/70">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span>Aderyn static analysis in CI</span>
+                    </div>
+                    <div className="mt-4 p-3 rounded-lg bg-amber-500/10 border border-amber-500/30">
+                      <p className="text-xs text-amber-200/90">
+                        External audit recommended before production deployment. Obtain SSB approval and conduct independent Sharia review.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Who Should Use This */}
+              <div className="mb-12">
+                <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-6 text-center">
+                  Who Should Use This?
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {useCases.map((useCase) => {
+                    const Icon = useCase.icon
+                    return (
+                      <Card key={useCase.title} className="border-border/60 bg-black/30 backdrop-blur hover:bg-black/40 transition-colors">
+                        <CardContent className="flex items-start gap-4 p-6">
+                          <div className="w-12 h-12 rounded-lg bg-[#FFC700]/10 flex items-center justify-center flex-shrink-0">
+                            <Icon className="w-6 h-6 text-[#FFC700]" />
+                          </div>
+                          <div>
+                            <h3 className="font-display text-base font-semibold text-foreground mb-2">
+                              {useCase.title}
+                            </h3>
+                            <p className="font-sans text-sm text-foreground/60 leading-relaxed">
+                              {useCase.description}
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    )
+                  })}
+                </div>
+              </div>
+
               <div className="mb-8">
                 <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-6">
                   Documentation Sections
@@ -198,13 +852,13 @@ export default function DocsPage() {
                 </div>
               </div>
 
-              {/* Community & Contribution Section */}
+              {/* Community & Resources Section */}
               <div className="mt-16 sm:mt-20">
                 <h2 className="font-display text-2xl sm:text-3xl text-foreground mb-6 text-center">
-                  Join Our Development
+                  Resources & Community
                 </h2>
                 <p className="font-sans text-base sm:text-lg text-foreground/70 mb-8 max-w-2xl mx-auto text-center">
-                  Be part of building the future of value-aligned decentralized systems. Contribute, ask questions, and connect with our community.
+                  Access the SDK, explore the codebase, and connect with developers building Sharia-compliant DeFi infrastructure.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -240,17 +894,28 @@ export default function DocsPage() {
               {/* CTA Section */}
               <div className="mt-20 text-center">
                 <p className="font-sans text-sm text-foreground/50 mb-4">
-                  Documentation is actively being developed. Check back often for updates.
+                  Production-ready smart contracts for Sharia-compliant capital formation. Start building today.
                 </p>
-                <Link
-                  href="https://github.com/tawf-labs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#FFC700] to-[#ebb800] text-black font-sans font-semibold rounded-lg hover:opacity-90 transition-opacity duration-200"
-                >
-                  <Github className="w-5 h-5" />
-                  Follow on GitHub
-                </Link>
+                <div className="flex flex-wrap gap-4 justify-center">
+                  <Link
+                    href="https://github.com/tawf-labs/Sharia-Capital-Standard"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#FFC700] to-[#ebb800] text-black font-sans font-semibold rounded-lg hover:opacity-90 transition-opacity duration-200"
+                  >
+                    <Github className="w-5 h-5" />
+                    View on GitHub
+                  </Link>
+                  <Link
+                    href="https://www.npmjs.com/package/@tawf-labs/sharia-capital-standard"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 text-foreground font-sans font-semibold rounded-lg transition-colors duration-200"
+                  >
+                    <Package className="w-5 h-5" />
+                    Install from npm
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

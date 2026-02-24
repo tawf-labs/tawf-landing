@@ -22,7 +22,7 @@ export function DappsSection() {
     {
       name: "TAWF Stewardship Layer",
       title: "Ethical Governance",
-      desc: "A governance layer that ensures community decisions follow Islamic principles, with privacy protection for reviewers using zero-knowledge attestations.",
+      desc: "A governance system that ensures community decisions align with Islamic principles, with privacy protections for reviewers.",
       href: "#governance",
     },
     {

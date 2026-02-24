@@ -26,3 +26,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .claude/
+DOCS_UX_IMPROVEMENTS.md
+DOCS_VISUAL_GUIDE.md
+DOCS_BEFORE_AFTER.md
+DOCS_UPDATE_SUMMARY.md
+DOCS_KEY_IMPROVEMENTS.md

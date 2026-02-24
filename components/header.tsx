@@ -41,13 +41,14 @@ export const Header = () => {
 
   const navItems = [
   // ─────────────────────────────
-  // Discover — What is TAWF?
+  // Discover, What is TAWF?
   // ─────────────────────────────
   {
     label: "Discover",
     hasDropdown: true,
     dropdownItems: [
       { label: "About TAWF", href: "/#about" },
+      { label: "Principles", href: "/principles" },
       { label: "Vision & Principles", href: "/#vision" },
       { label: "How It Works", href: "/#how-it-works" },
       { label: "Foundation & Legal", href: "/foundation" },
@@ -57,7 +58,7 @@ export const Header = () => {
   },
 
   // ─────────────────────────────
-  // Ecosystem — What exists?
+  // Ecosystem, What exists?
   // ─────────────────────────────
   {
     label: "Ecosystem",
@@ -70,7 +71,7 @@ export const Header = () => {
   },
 
   // ─────────────────────────────
-  // Governance — Decision making
+  // Governance, Decision making
   // ─────────────────────────────
   {
     label: "Governance",
@@ -85,7 +86,7 @@ export const Header = () => {
   },
 
   // ─────────────────────────────
-  // Foundation — Institutional layer
+  // Foundation, Institutional layer
   // ─────────────────────────────
   // {
   //   label: "Foundation",
@@ -100,7 +101,7 @@ export const Header = () => {
   // },
 
   // ─────────────────────────────
-  // Builders — Dev & research
+  // Builders, Dev & research
   // ─────────────────────────────
   {
     label: "Builders",
@@ -114,7 +115,7 @@ export const Header = () => {
   },
 
   // ─────────────────────────────
-  // Community — Social & coordination
+  // Community, Social & coordination
   // ─────────────────────────────
   // {
   //   label: "Community",

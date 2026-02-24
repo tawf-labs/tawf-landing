@@ -21,24 +21,24 @@ const jetbrainsMono = JetBrains_Mono({
 export async function generateMetadata(): Promise<Metadata> {
   return {
     viewport: "width=device-width, initial-scale=1",
-    title: "TAWF - Bridging the Ummah to Web3",
+    title: "TAWF - Building Value-Aligned Decentralized Systems",
     description:
-      "Chain-agnostic trust infrastructure serving the Sharia dApp ecosystem",
+      "Infrastructure for an ethical web, grounded in Islamic economic principles, open to all.",
     icons: {
       icon: [{ url: "/tawflogo.png", type: "image/png" }],
       shortcut: "/tawflogo.png",
       apple: "/tawflogo.png",
     },
     openGraph: {
-      title: "TAWF - Bridging the Ummah to Web3",
+      title: "TAWF - Building Value-Aligned Decentralized Systems",
       description:
-        "Chain-agnostic trust and compliance infrastructure for Sharia-compliant Web3",
+        "Infrastructure for an ethical web, grounded in Islamic economic principles, open to all.",
       images: [
         {
           url: "/tawflogo.png",
           width: 1200,
           height: 630,
-          alt: "TAWF - Sharia dApp Infrastructure",
+          alt: "TAWF - Value-Aligned Decentralized Systems",
         },
       ],
       type: "website",
@@ -46,14 +46,15 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "TAWF - Bridging the Ummah to Web3",
+      title: "TAWF - Building Value-Aligned Decentralized Systems",
       description:
-        "Chain-agnostic trust and compliance infrastructure for Sharia-compliant Web3",
+        "Infrastructure for an ethical web, grounded in Islamic economic principles, open to all.",
       images: ["/tawflogo.png"],
     },
     keywords: [
-      "Sharia dApp Infrastructure",
-      "Islamic Web3 Platform",
+      "Value-Aligned Decentralized Systems",
+      "Ethical Web3 Infrastructure",
+      "Islamic Economic Principles",
       "Zakat Services",
       "Qurbani Services",
       "Zero Knowledge Proofs",

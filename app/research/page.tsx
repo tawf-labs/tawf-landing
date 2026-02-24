@@ -11,12 +11,12 @@ const researchAreas = [
   {
     icon: Shield,
     title: "Zero-Knowledge Sharia Verification",
-    description: "Developing zk-SNARK verification systems for confirming Sharia compliance without exposing sensitive financial data. Privacy-preserving zakat calculations and qurbani fulfillment verification.",
+    description: "Developing zk-SNARK verification systems for confirming Sharia alignment without exposing sensitive financial data. Privacy-preserving zakat calculations and qurbani fulfillment verification.",
   },
   {
     icon: Scale,
     title: "Islamic Finance on Blockchain",
-    description: "Research on applying blockchain technology to Islamic financial instruments. Waqf endowment management, sukuk tokenization, and Sharia-compliant smart contract patterns.",
+    description: "Research on applying blockchain technology to Islamic financial instruments. Waqf endowment management, sukuk tokenization, and Sharia-aligned smart contract patterns.",
   },
   {
     icon: BookOpen,
@@ -36,7 +36,7 @@ const researchAreas = [
   {
     icon: Globe,
     title: "Cross-Chain Islamic Infrastructure",
-    description: "Multi-chain infrastructure enabling Sharia-compliant applications across EVM and non-EVM networks. Interoperability standards for Islamic dApps and cross-chain zakat distribution.",
+    description: "Multi-chain infrastructure enabling values-aligned applications across EVM and non-EVM networks. Interoperability standards for Islamic dApps and cross-chain zakat distribution.",
   },
 ]
 
@@ -136,7 +136,7 @@ export default function ResearchPage() {
                 Research
               </h1>
               <p className="font-sans text-lg sm:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-                Advancing the frontiers of Sharia-compliant Web3 through cryptography, Islamic finance research, and novel governance frameworks.
+                Advancing the frontiers of value-aligned decentralized systems through cryptography, Islamic finance research, and novel governance frameworks.
               </p>
             </motion.div>
           </div>
@@ -342,7 +342,7 @@ export default function ResearchPage() {
                 Collaborate With Us
               </h2>
               <p className="font-sans text-foreground/70 mb-8 max-w-2xl mx-auto">
-                We welcome collaborations with Islamic scholars, cryptographers, and institutions. Join us in building the foundational research for Sharia-compliant Web3.
+                We welcome collaborations with Islamic scholars, cryptographers, and institutions. Join us in building the foundational research for value-aligned decentralized systems.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

@@ -15,20 +15,20 @@ export function DappsSection() {
   const apps = [
     {
       name: "zkt.app",
-      title: "Zakat on-chain",
-      desc: "Calculate, verify, and distribute zakat with auditability and privacy via ZK proofs.",
+      title: "Wealth Circulation",
+      desc: "Transparent zakat for distributive justice, calculate, verify, and distribute with auditability and privacy via ZK proofs.",
       href: "https://zkt.app",
     },
     {
       name: "TAWF Stewardship Layer",
-      title: "ZK Governance",
-      desc: "A stewardship layer validating community governance outcomes for Sharia alignment using zero-knowledge attestations.",
+      title: "Ethical Governance",
+      desc: "Values-aligned oversight mechanisms, validating community governance outcomes for Sharia alignment using zero-knowledge attestations.",
       href: "#governance",
     },
     {
       name: "qrbn.app",
-      title: "Qurbani on-chain",
-      desc: "End-to-end qurbani procurement and proof-of-fulfillment using blockchain.",
+      title: "Real-Economy Tethering",
+      desc: "Physical asset verification on-chain, end-to-end qurbani procurement and proof-of-fulfillment using blockchain.",
       href: "https://qrbn.app",
     },
   ];
@@ -43,6 +43,10 @@ export function DappsSection() {
             </h2>
             <Smartphone className="-mt-8 w-12 h-12 text-foreground/80 icon-float" aria-hidden="true" />
           </div>
+
+          <p className="text-foreground/70 text-base sm:text-lg mb-8 max-w-3xl">
+            Each application demonstrates how economic principles translate into working decentralized systems.
+          </p>
 
           <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {apps.map((app) => (

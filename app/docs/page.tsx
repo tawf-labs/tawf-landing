@@ -22,8 +22,8 @@ interface SDKFeature {
 export default function DocsPage() {
   const sdkFeatures: SDKFeature[] = [
     {
-      title: "Sharia-Compliant Transactions",
-      description: "SDK methods for zakat, waqf, and qurban transactions with built-in Sharia validation.",
+      title: "Sharia-Aligned Transactions",
+      description: "SDK methods for zakat, waqf, and qurban transactions with built-in Sharia alignment validation.",
     },
     {
       title: "Zero-Knowledge Proofs",
@@ -42,7 +42,7 @@ export default function DocsPage() {
   const docSections: DocSection[] = [
     {
       title: "Getting Started",
-      description: "Quick start guide to begin building with TAWF. Learn about installation, configuration, and your first Sharia-compliant dApp.",
+      description: "Quick start guide to begin building with TAWF. Learn about installation, configuration, and your first values-aligned dApp.",
       icon: BookOpen,
       status: "coming-soon",
     },
@@ -107,7 +107,7 @@ export default function DocsPage() {
                   Documentation
                 </h1>
                 <p className="font-sans text-lg sm:text-xl text-foreground/80 max-w-3xl leading-relaxed">
-                  Building the future of Sharia-compliant Web3. Resources, guides, and tools for developers.
+                  Building the future of value-aligned decentralized systems. Resources, guides, and tools for developers.
                 </p>
               </div>
 
@@ -137,7 +137,7 @@ export default function DocsPage() {
 
                 <CardContent className="flex flex-col gap-6">
                   <p className="font-sans text-base text-foreground/80 leading-relaxed">
-                    We're building a comprehensive SDK for developers to integrate Sharia-compliant Web3 features into their applications. The TAWF-SDK will provide tools, libraries, and documentation to build Islamic finance dApps with confidence.
+                    We're building a comprehensive SDK for developers to integrate values-aligned features into their applications. The TAWF-SDK will provide tools, libraries, and documentation to build Islamic finance dApps with confidence.
                   </p>
 
                   {/* SDK Features List */}
@@ -204,7 +204,7 @@ export default function DocsPage() {
                   Join Our Development
                 </h2>
                 <p className="font-sans text-base sm:text-lg text-foreground/70 mb-8 max-w-2xl mx-auto text-center">
-                  Be part of building the future of Sharia-compliant Web3. Contribute, ask questions, and connect with our community.
+                  Be part of building the future of value-aligned decentralized systems. Contribute, ask questions, and connect with our community.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">

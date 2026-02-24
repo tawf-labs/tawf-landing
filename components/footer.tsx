@@ -6,6 +6,7 @@ import { Github, X, MessageCircle, Send, Twitter } from "lucide-react"
 export const Footer = () => {
   const productLinks = [
     { label: "Overview", href: "/#about" },
+    { label: "Principles", href: "/principles" },
     { label: "Ecosystem", href: "/#ecosystem" },
     { label: "DApps", href: "/#dapps" },
     { label: "Governance", href: "/#governance" },
@@ -54,7 +55,7 @@ export const Footer = () => {
                 <img src="/logos/tawflogo.png" alt="TAWF Logo - Home" className="w-[80px] h-auto" />
               </Link>
               <p className="text-sm text-foreground/60 leading-relaxed max-w-sm">
-                TAWF serves the Ummah with Sharia-aligned infrastructure for on-chain zakat, waqf, and qurban, governed by a dual-layer DAO with zero-knowledge Sharia oversight.
+                Building value-aligned decentralized systems grounded by Islamic economic principles. From zakat to governance, infrastructure that bridges timeless values with modern technology.
               </p>
             </div>
 

@@ -1,7 +1,7 @@
 <h1 align="center">TAWF.xyz</h1>
 
 <p align="center">
-  Shariah-compliant Web3 infrastructure for verified faith-based actions — bringing Islamic finance, philanthropy, and governance on-chain with transparency, auditability, and privacy-preservation.
+  Shariah-compliant Web3 infrastructure for verified faith-based actions, bringing Islamic finance, philanthropy, and governance on-chain with transparency, auditability, and privacy-preservation.
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@
 
 ## Overview
 
-TAWF.xyz is **not a single app**, but an **ecosystem of interoperable decentralized applications (dApps)** that follow **Islamic (Shariah) principles** — enabling Muslims to participate in blockchain without compromising their faith.
+TAWF.xyz is **not a single app**, but an **ecosystem of interoperable decentralized applications (dApps)** that follow **Islamic (Shariah) principles**, enabling Muslims to participate in blockchain without compromising their faith.
 
 ## Core Principles
 
@@ -104,7 +104,7 @@ TAWF.xyz is **not a single app**, but an **ecosystem of interoperable decentrali
 | Soulbound NFTs | Non-transferable proofs for donations, qurban, participation |
 | IPFS Storage | Documents, reports, and evidence |
 | ZK Proofs | Shariah compliance, solvency, eligibility |
-| Focus | **"Don't trust, verify — without exposing private data"** |
+| Focus | **"Don't trust, verify, without exposing private data"** |
 
 ## Architecture
 

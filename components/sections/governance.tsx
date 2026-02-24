@@ -1,6 +1,7 @@
 "use client";
 
 import { Layers } from "lucide-react";
+import Link from "next/link";
 
 // 3D Crystal Illustration for Community DAO
 function Crystal3D() {
@@ -61,13 +62,13 @@ export function GovernanceSection() {
         <div className="mx-auto max-w-7xl">
           <div className="flex items-center gap-3 mb-12">
             <h2 className="bg-clip-text bg-gradient-to-r from-[#FFC700] to-[#ffe38a] font-display text-transparent text-3xl sm:text-4xl md:text-5xl">
-              Dual-Layer Governance
+              Governance Structured Around Islamic Jurisprudence
             </h2>
             <Layers className="w-12 h-12 text-foreground/80 icon-float" />
           </div>
 
           <p className="text-foreground/70 text-lg mb-12 max-w-4xl">
-            TAWF operates a dual-layer DAO system that balances open community participation with Sharia integrity through transparent community governance and private ZK-enabled oversight.
+            TAWF operates a dual-layer governance system structured around Islamic jurisprudence, balancing open community participation (shura) with values-aligned oversight (hisbah) through transparent governance and zero-knowledge validation.
           </p>
 
           {/* Bento Box Layout */}
@@ -90,7 +91,7 @@ export function GovernanceSection() {
 
               <div className="mt-6 pt-6 border-t border-white/10">
                 <p className="text-xs text-foreground/50">
-                  Empowering the community with transparent governance while ensuring Sharia compliance through oversight
+                  Empowering the community with transparent governance grounded by the Islamic tradition of consultative decision-making (shura)
                 </p>
               </div>
             </div>
@@ -100,20 +101,20 @@ export function GovernanceSection() {
               <div className="flex items-center gap-5 mb-6">
                 <Scales3D />
                 <div className="flex-1 pt-1">
-                  <h3 className="text-2xl font-semibold text-foreground mb-2">ZK Sharia Council</h3>
+                  <h3 className="text-2xl font-semibold text-foreground mb-2">Independent Sharia Council</h3>
                   <p className="text-sm text-foreground/60">Private & Verifiable</p>
                 </div>
               </div>
 
               <ul className="space-y-4 list-minimal list-minimal-gold">
                 <li>Zero-knowledge proofs ensure privacy while maintaining verifiability</li>
-                <li>Independent Sharia scholars with TAWF DID credentials review proposals and outcomes for compliance</li>
+                <li>Qualified Islamic scholars with TAWF DID credentials provide jurisprudential review of proposals and outcomes</li>
                 <li>Veto power on non-compliant decisions while protecting scholar identities</li>
               </ul>
 
               <div className="mt-6 pt-6 border-t border-white/10">
                 <p className="text-xs text-foreground/50">
-                  Ensuring Sharia alignment without compromising on privacy or security for Islamic scholars
+                  Ensuring Sharia compliance validation through institutional oversight grounded by the Islamic tradition of accountability (hisbah)
                 </p>
               </div>
             </div>
@@ -122,8 +123,18 @@ export function GovernanceSection() {
           {/* Bottom Summary */}
           <div className="mt-8 p-6 rounded-xl bg-white/5 border border-white/10">
             <p className="text-center text-sm text-foreground/70">
-              <span className="font-semibold text-foreground">DID-Based Governance:</span> Both the Community DAO and ZK Sharia Council use TAWF DID (NFT credentials) for voting rights, no tokens required. This dual-layer system ensures decisions remain community-driven while applications, upgrades, and standards can be verifiably Sharia-aligned.
+              <span className="font-semibold text-foreground">DID-Based Governance:</span> Both the Community DAO and Independent Sharia Council use TAWF DID (NFT credentials) for voting rights, no tokens required. This dual-layer system ensures decisions remain community-driven while applications, upgrades, and standards can be verifiably Sharia-aligned.
             </p>
+          </div>
+
+          {/* Link to Principles page for deeper explanation */}
+          <div className="mt-6 text-center">
+            <Link
+              href="/principles"
+              className="text-sm text-[#FFC700] hover:text-[#ffe38a] transition-colors underline underline-offset-4"
+            >
+              Learn more about our governance traditions (shura, hisbah) →
+            </Link>
           </div>
         </div>
       </div>

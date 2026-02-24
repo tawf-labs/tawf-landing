@@ -9,7 +9,7 @@ import Link from "next/link"
 const values = [
   {
     icon: Scale,
-    title: "Sharia Compliance First",
+    title: "Sharia Alignment First",
     description: "All systems and applications are developed under the guidance of Islamic scholars, ensuring alignment with Sharia principles in every smart contract and transaction.",
   },
   {
@@ -25,14 +25,14 @@ const values = [
   {
     icon: Users,
     title: "Community Governance",
-    description: "Dual-layer governance combining scholar oversight for Sharia compliance and community participation for operational decisions.",
+    description: "Dual-layer governance combining scholar oversight for Sharia alignment and community participation for operational decisions.",
   },
 ]
 
 const governance = [
   {
     title: "Sharia Council",
-    description: "Islamic scholars who provide guidance on Sharia compliance, review systems, and certify that applications align with Islamic principles.",
+    description: "Islamic scholars who provide guidance on Sharia alignment, review systems, and certify that applications align with Islamic principles.",
     icon: GraduationCap,
   },
   {
@@ -114,7 +114,7 @@ export default function FoundationPage() {
                 Foundation & Governance
               </h1>
               <p className="font-sans text-lg sm:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-                Building trust through transparency, Sharia compliance, and community governance. The institutional foundation serving the Sharia Web3 ecosystem.
+                Building trust through transparency, Sharia alignment, and community governance. The institutional foundation serving the values-aligned Web3 ecosystem.
               </p>
             </motion.div>
           </div>
@@ -134,7 +134,7 @@ export default function FoundationPage() {
                 Our Mission
               </h2>
               <p className="font-sans text-lg text-foreground/80 leading-relaxed">
-                TAWF Foundation exists to serve the Ummah by providing trustworthy, Sharia-compliant infrastructure for Islamic obligations on-chain. We bridge traditional Islamic scholarship with modern blockchain technology, enabling Muslims to fulfill zakat, qurbani, and other duties with confidence in the digital age.
+                TAWF Foundation exists to serve the Ummah by providing trustworthy, value-aligned infrastructure for Islamic obligations on-chain, grounded in Islamic economic principles. We bridge traditional Islamic scholarship with modern blockchain technology, enabling Muslims to fulfill zakat, qurbani, and other duties with confidence in the digital age.
               </p>
             </motion.div>
           </div>
@@ -206,7 +206,7 @@ export default function FoundationPage() {
                 </h2>
               </div>
               <p className="font-sans text-foreground/60 mb-12 max-w-2xl">
-                TAWF employs a dual-layer governance system ensuring both Sharia compliance and community-driven development.
+                TAWF employs a dual-layer governance system ensuring both Sharia alignment and community-driven development.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -48,7 +48,7 @@ export default function LabsPage() {
     {
       name: "Marcellino Asanuddin",
       role: "Relations and Operations",
-      bio: "Operations lead connecting partners and communities with TAWF's vision for Sharia-compliant Web3 infrastructure.",
+      bio: "Operations lead connecting partners and communities with TAWF's vision for value-aligned decentralized infrastructure.",
       initials: "MA",
       image: "/marcel.jpg",
       socials: {
@@ -88,7 +88,7 @@ export default function LabsPage() {
     {
       name: "Muhammad Fazle Mawla",
       role: "Designer and Video Editor",
-      bio: "Creative designer and video editor crafting visual narratives that communicate TAWF's vision for Sharia-compliant Web3 solutions.",
+      bio: "Creative designer and video editor crafting visual narratives that communicate TAWF's vision for value-aligned decentralized solutions.",
       initials: "FM",
       image: "/fazle.jpg",
       socials: {
@@ -114,7 +114,7 @@ export default function LabsPage() {
                   TAWF Labs
                 </h1>
                 <p className="font-sans text-lg sm:text-xl text-foreground/80 max-w-3xl leading-relaxed">
-                  Meet the team bridging Islamic finance and Web3 through Sharia-compliant web3 innovation.
+                  Meet the team bridging Islamic finance and Web3 through value-aligned innovation grounded in Islamic economic principles.
                 </p>
               </div>
 
@@ -211,7 +211,7 @@ export default function LabsPage() {
                   Join Our Mission
                 </h3>
                 <p className="font-sans text-base sm:text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-                  We're always looking for talented individuals passionate about building the future of Islamic Web3.
+                  We're always looking for talented individuals passionate about building the future of value-aligned decentralized systems.
                 </p>
                 <Link
                   href="/#contact"

@@ -21,24 +21,24 @@ const jetbrainsMono = JetBrains_Mono({
 export async function generateMetadata(): Promise<Metadata> {
   return {
     viewport: "width=device-width, initial-scale=1",
-    title: "TAWF - Building Value-Aligned Decentralized Systems",
+    title: "TAWF - Structuring Value for Web3",
     description:
-      "Infrastructure for an ethical web, grounded in Islamic economic principles, open to all.",
+      "Implementing Islamic economic principles as programmable systems.",
     icons: {
       icon: [{ url: "/tawflogo.png", type: "image/png" }],
       shortcut: "/tawflogo.png",
       apple: "/tawflogo.png",
     },
     openGraph: {
-      title: "TAWF - Building Value-Aligned Decentralized Systems",
+      title: "TAWF - Structuring Value for Web3",
       description:
-        "Infrastructure for an ethical web, grounded in Islamic economic principles, open to all.",
+        "Implementing Islamic economic principles as programmable systems.",
       images: [
         {
           url: "/tawflogo.png",
           width: 1200,
           height: 630,
-          alt: "TAWF - Value-Aligned Decentralized Systems",
+          alt: "TAWF - Structuring Value for Web3",
         },
       ],
       type: "website",
@@ -46,9 +46,9 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "TAWF - Building Value-Aligned Decentralized Systems",
+      title: "TAWF - Structuring Value for Web3",
       description:
-        "Infrastructure for an ethical web, grounded in Islamic economic principles, open to all.",
+        "Implementing Islamic economic principles as programmable systems.",
       images: ["/tawflogo.png"],
     },
     keywords: [

@@ -139,7 +139,7 @@ export default function PrinciplesPage() {
                     Financial transactions must be tethered to real economic assets. Speculation on standalone financial instruments, detached from underlying value, is discouraged. Money is a medium of exchange, not a commodity to be traded for profit.
                   </p>
                   <div className="bg-black/50 rounded-lg p-4 text-sm">
-                    <span className="text-[#FFC700] font-semibold">On-chain implementation:</span> Asset verification protocols (e.g., qrbn.app) that tether digital transactions to physical assets via auditable proofs.
+                    <span className="text-[#FFC700] font-semibold">On-chain implementation:</span> Asset verification protocols (e.g., qrbn.tawf.xyz) that tether digital transactions to physical assets via auditable proofs.
                   </div>
                 </div>
 
@@ -161,7 +161,7 @@ export default function PrinciplesPage() {
                     Zakat is the obligatory 2.5% annual wealth tax on eligible assets. It is not charity, it is a right of the poor and a mechanism for redistributive justice. The Qur'an explicitly connects prayer (preservation of faith) with zakat (preservation of wealth).
                   </p>
                   <div className="bg-black/50 rounded-lg p-4 text-sm">
-                    <span className="text-[#FFC700] font-semibold">On-chain implementation:</span> zkt.app enables calculation, verification, and distribution of zakat with privacy-preserving proofs.
+                    <span className="text-[#FFC700] font-semibold">On-chain implementation:</span> zkt.tawf.xyz enables calculation, verification, and distribution of zakat with privacy-preserving proofs.
                   </div>
                 </div>
               </div>

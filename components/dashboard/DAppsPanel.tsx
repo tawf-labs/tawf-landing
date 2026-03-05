@@ -42,22 +42,22 @@ interface DApp {
 const mockDApps: DApp[] = [
   {
     id: "1",
-    name: "zkt.app",
+    name: "zkt.tawf.xyz",
     description: "Calculate, verify, and distribute Zakat with auditability and privacy via ZK proofs.",
     category: "DeFi",
     icon: Sheet,
     status: "live",
-    link: "https://zkt.app",
+    link: "https://zkt.tawf.xyz",
     tags: ["Zakat", "DeFi", "ZK Proofs"]
   },
   {
     id: "2",
-    name: "qrbn.app",
+    name: "qrbn.tawf.xyz",
     description: "End-to-end Qurbani procurement and proof-of-fulfillment using blockchain.",
     category: "Utilities",
     icon: Beef,
     status: "live",
-    link: "https://qrbn.app",
+    link: "https://qrbn.tawf.xyz",
     tags: ["Qurban", "Utilities", "Tracking"]
   },
   // {

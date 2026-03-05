@@ -14,10 +14,10 @@ import { LayoutGrid, Phone, Smartphone } from "lucide-react";
 export function DappsSection() {
   const apps = [
     {
-      name: "zkt.app",
+      name: "zkt",
       title: "Wealth Circulation",
       desc: "Transparent zakat for fair distribution to those in need, calculate, verify, and distribute with auditability and privacy via privacy-preserving proofs.",
-      href: "https://zkt.app",
+      href: "https://zkt.tawf.xyz",
     },
     {
       name: "TAWF Stewardship Layer",
@@ -26,10 +26,10 @@ export function DappsSection() {
       href: "#governance",
     },
     {
-      name: "qrbn.app",
+      name: "qrbn",
       title: "Real-Economy Tethering",
       desc: "Physical asset verification recorded on the blockchain, end-to-end qurbani procurement and verifiable proof of completion.",
-      href: "https://qrbn.app",
+      href: "https://qrbn.tawf.xyz",
     },
   ];
 

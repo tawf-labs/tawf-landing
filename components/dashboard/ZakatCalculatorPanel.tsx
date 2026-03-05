@@ -77,16 +77,16 @@ export function ZakatCalculatorPanel({ connected, onConnect }: ZakatCalculatorPa
   const totalFitrah = peopleCount ? parseFloat(peopleCount) * fitrahPerPerson : 0
 
   const handlePayZakat = () => {
-    // Redirect to zkt.app with calculated amount
+    // Redirect to zkt.tawf.xyz with calculated amount
     const amount = calculatedZakat.toFixed(2)
-    const url = `https://zkt.app?amount=${amount}&type=maal&currency=USD`
+    const url = `https://zkt.tawf.xyz?amount=${amount}&type=maal&currency=USD`
     window.open(url, "_blank", "noopener,noreferrer")
   }
 
   const handlePayFitrah = () => {
-    // Redirect to zkt.app with fitrah amount
+    // Redirect to zkt.tawf.xyz with fitrah amount
     const amount = totalFitrah.toFixed(2)
-    const url = `https://zkt.app?amount=${amount}&type=fitrah&currency=USD`
+    const url = `https://zkt.tawf.xyz?amount=${amount}&type=fitrah&currency=USD`
     window.open(url, "_blank", "noopener,noreferrer")
   }
 
@@ -345,7 +345,7 @@ export function ZakatCalculatorPanel({ connected, onConnect }: ZakatCalculatorPa
                     className="w-full py-6 bg-gradient-to-r from-[#FFC700] to-[#ffe38a] text-black font-semibold hover:opacity-90 hover:shadow-lg hover:shadow-[#FFC700]/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     <ExternalLink className="h-4 w-4" />
-                    Pay Zakat via zkt.app
+                    Pay Zakat via zkt.tawf.xyz
                   </Button>
                 ) : (
                   <Button
@@ -424,7 +424,7 @@ export function ZakatCalculatorPanel({ connected, onConnect }: ZakatCalculatorPa
                     className="w-full py-6 bg-gradient-to-r from-[#FFC700] to-[#ffe38a] text-black font-semibold hover:opacity-90 hover:shadow-lg hover:shadow-[#FFC700]/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     <ExternalLink className="h-4 w-4" />
-                    Pay Zakat Fitrah via zkt.app
+                    Pay Zakat Fitrah via zkt.tawf.xyz
                   </Button>
                 ) : (
                   <Button
@@ -520,15 +520,15 @@ export function ZakatCalculatorPanel({ connected, onConnect }: ZakatCalculatorPa
             </div>
           </Card>
 
-          {/* zkt.app Info */}
+          {/* zkt.tawf.xyz Info */}
           <Card className="bg-[#FFC700]/10 border border-[#FFC700]/30">
             <div className="p-4">
               <div className="flex items-start gap-2">
                 <Info className="h-5 w-5 text-[#FFC700] flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-sm font-medium text-[#FFC700]">Powered by zkt.app</div>
+                  <div className="text-sm font-medium text-[#FFC700]">Powered by zkt.tawf.xyz</div>
                   <div className="text-xs text-gray-400 mt-1">
-                    Payments are processed securely through zkt.app, ensuring transparent and
+                    Payments are processed securely through zkt.tawf.xyz, ensuring transparent and
                     Shariah-compliant distribution.
                   </div>
                 </div>

@@ -30,6 +30,16 @@ const partners = [
     url: "https://blockdev.id/",
     invert: true,
   },
+  // {
+
+
+  // },
+  // {
+  //   name= "Ethiq",
+  //   logo= "",
+  //   url="",
+  //   invert: true,
+  // },
 ];
 
 const ITEMS_PER_VIEW = 4;
